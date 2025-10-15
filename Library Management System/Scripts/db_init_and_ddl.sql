@@ -2,11 +2,11 @@
 ===================================================================================
 Sript for creating the database and neccessary tables for library management system
 ====================================================================================
-
-This script creates the schema for a library management system in SQL Server. It includes tables for branches, employees, members, books, issue tracking and return tracking. 
-Key features:
-1. Uses IF OBJECT_ID(...) IS NOT NULL to check for table existence.
-2. Ensures foreign key constraints are properly defined.
+1. This script creates the schema for a library management system in SQL Server. 
+2. It includes tables for branches, employees, members, books, issue tracking and return tracking. 
+3. Key features:
+    a. Uses IF OBJECT_ID(...) IS NOT NULL to check for table existence.
+    b. Ensures foreign key constraints are properly defined.
 ===========================================================
 */
 
