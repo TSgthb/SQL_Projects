@@ -199,22 +199,68 @@ BEGIN
     WHERE b.isbn = @temp_isbn
 END
 
-/*
-Task 15: Branch Performance Report
-Create a query that generates a performance report for each branch, showing the number of books issued, the number of books returned, and the total revenue generated from book rentals.
+--Task 15: Branch Performance Report
+--Create a query that generates a performance report for each branch, showing the number of books issued, the number of books returned, and the total revenue generated from book rentals.
 
+SELECT 
+	br.branch_id,
+	COUNT(DISTINCT iss.issued_id) AS books_issued,
+	COUNT(DISTINCT ret.ret_id) AS books_returned,
+	SUM(bo.rental_price) AS tot_rent
+FROM dbo.branch br
+	INNER JOIN dbo.employees emp
+		ON br.branch_id = emp.branch_id
+	INNER JOIN dbo.issued_status iss
+		ON emp.emp_id = iss.issued_emp_id
+	INNER JOIN dbo.books bo
+		ON iss.issued_book_isbn = bo.isbn
+	LEFT JOIN dbo.return_status ret
+		ON iss.issued_id = ret.issued_id	
+GROUP BY br.branch_id
 
 Task 16: CTAS: Create a Table of Active Members
 Use the CREATE TABLE AS (CTAS) statement to create a new table active_members containing members who have issued at least one book in the last 6 months.
 
+SELECT *
+INTO active_members 
+FROM dbo.members mem2
+	INNER JOIN 
+	(
+	SELECT 
+		mem.member_id,
+		mem.member_name,
+		MAX(iss.issued_date) AS last_issue
+	FROM dbo.members mem
+		INNER JOIN dbo.issued_status iss
+			ON mem.member_id = iss.issued_member_id
+	GROUP BY 
+		mem.member_id,
+		mem.member_name
+	) ij
+		ON mem2.member_id = ij.member_id
+WHERE DATEDIFF(DAY,last_issue,GETDATE()) < 60
 
+--Task 17: Find Employees with the Most Book Issues Processed
+--Write a query to find the top 3 employees who have processed the most book issues. Display the employee name, number of books processed, and their branch.
 
-Task 17: Find Employees with the Most Book Issues Processed
-Write a query to find the top 3 employees who have processed the most book issues. Display the employee name, number of books processed, and their branch.
+SELECT TOP 3
+	emp.emp_id,
+	emp.emp_name,
+	br.branch_id,
+	COUNT(iss.issued_emp_id) AS tot_books_issued
+FROM dbo.employees emp
+	INNER JOIN dbo.branch br
+		ON emp.branch_id = br.branch_id
+	INNER JOIN dbo.issued_status iss
+		ON emp.emp_id = iss.issued_emp_id
+GROUP BY 
+	emp.emp_id,
+	emp.emp_name,
+	br.branch_id
+ORDER BY tot_books_issued DESC
 
-
-Task 18: Identify Members Issuing High-Risk Books
-Write a query to identify members who have issued books more than twice with the status "damaged" in the books table. Display the member name, book title, and the number of times they've issued damaged books.    
+--Task 18: Identify Members Issuing High-Risk Books
+--Write a query to identify members who have issued books more than twice with the status "damaged" in the books table. Display the member name, book title, and the number of times they've issued damaged books.    
 
 
 Task 19: Stored Procedure
