@@ -85,14 +85,59 @@ GROUP BY category
 
 -- Task 9. **List Members Who Registered in the Last 180 Days**:
 
+SELECT
+    member_id,
+    member_name,
+    reg_date
+FROM
+    dbo.members
+WHERE
+    DATEDIFF(DAY,reg_date,GETDATE()) <= 180
+
 -- Task 10: List Employees with Their Branch Manager's Name and their branch details**:
 
+WITH CTE AS 
+(
+    SELECT 
+        br.manager_id,
+        emp.emp_name AS man_name,
+        br.branch_id,
+        br.branch_address,
+        br.contact_no
+    FROM branch br 
+        INNER JOIN employees emp 
+        ON br.manager_id = emp.emp_id
+) man_det
+SELECT
+    emp2.emp_id,
+    emp2.emp_name,
+    man_det.manager_id,
+    man_det.man_name,
+    man_det.branch_id,
+    man_det.branch_address,
+    man_det.contact_no
+FROM employees emp2
+    INNER JOIN man_det
+    ON emp2.branch_id = man_det.branch_id
 
 -- Task 11. Create a Table of Books with Rental Price Above a Certain Threshold
 
+SELECT *
+INTO high_val_books
+FROM books
+WHERE rental_price > 7.00
+
 -- Task 12: Retrieve the List of Books Not Yet Returned
 
-    
+SELECT 
+    b.book_title,
+    b.category,
+    b.rental_price
+FROM books AS b
+    LEFT JOIN return_status AS rb
+    ON b.isbn = rb.return_book_isbn
+WHERE rb.return_book_isbn IS NULL
+
 /*
 ### Advanced SQL Operations
 
