@@ -104,8 +104,8 @@ WITH CTE AS
         br.branch_id,
         br.branch_address,
         br.contact_no
-    FROM branch br 
-        INNER JOIN employees emp 
+    FROM dbo.branch br 
+        INNER JOIN dbo.employees emp 
         ON br.manager_id = emp.emp_id
 ) man_det
 SELECT
@@ -116,7 +116,7 @@ SELECT
     man_det.branch_id,
     man_det.branch_address,
     man_det.contact_no
-FROM employees emp2
+FROM dbo.employees emp2
     INNER JOIN man_det
     ON emp2.branch_id = man_det.branch_id
 
@@ -124,7 +124,7 @@ FROM employees emp2
 
 SELECT *
 INTO high_val_books
-FROM books
+FROM dbo.books
 WHERE rental_price > 7.00
 
 -- Task 12: Retrieve the List of Books Not Yet Returned
@@ -133,23 +133,73 @@ SELECT
     b.book_title,
     b.category,
     b.rental_price
-FROM books AS b
-    LEFT JOIN return_status AS rb
+FROM dbo.books AS b
+    LEFT JOIN dbo.return_status AS rb
     ON b.isbn = rb.return_book_isbn
 WHERE rb.return_book_isbn IS NULL
 
+-- Advanced SQL Operations
+
+--Task 13: Identify Members with Overdue Books
+--Write a query to identify members who have overdue books (assume a 30-day return period). Display the member's name, book title, issue date, and days overdue.
+
+WITH CTE AS
+(
+	SELECT
+		iss.issued_member_id
+		iss.book_title,
+		iss.issued_date,
+		DATEADD(DAY,30,iss.issued_date) AS due_date,
+		DATEDIFF(DAY,due_date,GETDATE()) AS days_passed
+	FROM dbo.issued_status iss
+		LEFT JOIN dbo.return_status rs
+		ON iss.issued_id = rs.issued_id
+	WHERE rs.issued_id IS NULL
+) ov_mem
+SELECT 
+	mem.member_name,
+	ov_mem.book_title,
+	ov_mem.issued_date,
+	ov_mem.days_overdue
+FROM dbo.members mem
+	INNER JOIN ov_mem
+	ON mem.member_id = ov_mem.issued_member_id
+WHERE ov_mem.days_passed > 0
+
+--Task 14: Update Book Status on Return
+--Write a query to update the status of books in the books table to "available" when they are returned (based on entries in the return_status table).
+
+CREATE PROCEDURE sp_update_returned_book
+@ret_id VARCHAR(10),
+@iss_id VARCHAR(30),
+@ret_date DATE = GETDATE()
+AS
+BEGIN
+    DECLARE @temp_isbn VARCHAR(50);
+    DECLARE @temp_book_name VARCHAR(80);
+    
+    SELECT 
+        @temp_isbn = issued_book_isbn,
+        @temp_book_name = issued_book_name
+    FROM dbo.issued_status AS iss
+    WHERE iss.issued_id = @iss_id
+        
+    INSERT INTO dbo.return_status
+    VALUES
+    (
+        @ret_id,
+        @iss_id,
+        @temp_book_name,
+        @ret_date,
+        @temp_isbn
+    )
+        
+    UPDATE dbo.books AS b
+    SET status = 'yes'
+    WHERE b.isbn = @temp_isbn
+END
+
 /*
-### Advanced SQL Operations
-
-Task 13: Identify Members with Overdue Books
-Write a query to identify members who have overdue books (assume a 30-day return period). Display the member's name, book title, issue date, and days overdue.
-
-
-Task 14: Update Book Status on Return
-Write a query to update the status of books in the books table to "available" when they are returned (based on entries in the return_status table).
-
-
-
 Task 15: Branch Performance Report
 Create a query that generates a performance report for each branch, showing the number of books issued, the number of books returned, and the total revenue generated from book rentals.
 
