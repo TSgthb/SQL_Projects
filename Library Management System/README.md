@@ -2,7 +2,7 @@
 
 ## Project overview
 
-This project demonstrates the implementation of a library management system using SQL Server. It includes creating the database and schema (DDL), loading data from CSV sources, performing CRUD operations, creating summary tables using CTAS patterns, and developing advanced queries and stored procedures for operational reporting and data maintenance. The documentation below follows the comments and descriptions provided in the supplied SQL scripts and preserves the original task-level explanations.
+This project demonstrates the implementation of a library management system using SQL Server. It includes creating the database and schema, loading data from CSV sources, performing CRUD operations, creating summary tables using CTAS patterns, and developing advanced queries and stored procedures for operational reporting and data maintenance.
 
 ## Objectives
 
@@ -665,3 +665,4 @@ GROUP BY sq.member_id;
 - **Database schema:** Detailed table structures and foreign keys are defined in the DDL above.
 - **Data analysis:** The queries provide insights into book categories, member activity, employee performance and branch-level metrics.
 - **Summary reports:** CTAS outputs (books_issued, branch_reports, active_members, overdue_fines) support operational decision making and reporting.
+
