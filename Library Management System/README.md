@@ -15,6 +15,10 @@ This project demonstrates the implementation of a library management system usin
 
 ### 1. Database Setup
 
+- **Entity relationship diagram:** Create an ER diagram for the database showing how different tables connect
+
+![ERD](https://github.com/TSgthb/SQL_Projects/blob/0993ba6ce763580622b16ec4df5c437809a9b6d4/Library%20Management%20System/Documents/entity_relationship_diagram.png)
+  
 - **Database creation:** Create a database named `library_mgmt_sys`.
 - **Table creation:** Create tables for branch, employees, members, books, issued_status and return_status.
 ```sql
@@ -665,6 +669,7 @@ GROUP BY sq.member_id;
 - **Database schema:** Detailed table structures and foreign keys are defined in the DDL above.
 - **Data analysis:** The queries provide insights into book categories, member activity, employee performance and branch-level metrics.
 - **Summary reports:** CTAS outputs (books_issued, branch_reports, active_members, overdue_fines) support operational decision making and reporting.
+
 
 
 
