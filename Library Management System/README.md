@@ -1,6 +1,6 @@
-# Library management system
+# Library Management System
 
-## Project overview
+## Project Overview
 
 This project demonstrates the implementation of a library management system using SQL Server. It includes creating the database and schema, loading data from CSV sources, performing CRUD operations, creating summary tables using CTAS patterns, and developing advanced queries and stored procedures for operational reporting and data maintenance.
 
@@ -11,9 +11,9 @@ This project demonstrates the implementation of a library management system usin
 3. **Perform CRUD operations and create summary tables using CTAS (create table as select).**
 4. **Implement advanced SQL queries and stored procedures to support reporting, overdue detection and automated status updates.**
 
-## Project structure
+## Project Structure
 
-### 1. Database setup
+### 1. Database Setup
 
 - **Database creation:** Create a database named `library_mgmt_sys`.
 - **Table creation:** Create tables for branch, employees, members, books, issued_status and return_status.
@@ -141,12 +141,12 @@ CREATE TABLE return_status
 GO
 ```
 
-### 2. Data loading
+### 2. Data Loading
 
 - **Bulk import:** Use BULK INSERT to load source CSVs into corresponding tables for performance. The working script here uses FIRSTROW = 2 to skip headers, FIELDTERMINATOR = ',' and TABLOCK for speed.
 - **Supplemental inserts:** After bulk loading, scripts insert supplemental rows not loaded (due to special characters in fields) from CSVs and add corresponding issued records as needed.
 
-### 3. CRUD operations
+### 3. CRUD Operations
 
 - **Create:** Insert new book records and other sample data.
 - **Read:** Select queries used to validate data after load.
@@ -324,7 +324,7 @@ FROM dbo.books
 WHERE rental_price > 7.00;
 ```
 
-### 5. Data analysis & findings
+### 5. Data Analysis & Findings
 
 The below scripts include a variety of reporting queries to support operations and analytics:
 
@@ -463,7 +463,7 @@ INNER JOIN CTE
 WHERE CTE.days_passed > 0;
 ```
 
-### 6. Advanced SQL operations
+### 6. Advanced SQL Operations
 
 The following scripts include stored procedures and more complex reporting:
 
@@ -507,7 +507,7 @@ BEGIN
 END;
 ```
 
-Task 16: Branch performance report
+Task 16: Branch Performance Report
 
 ```sql
 /* 
@@ -660,9 +660,10 @@ FROM
 GROUP BY sq.member_id;
 ```
 
-## Reports 
+## Conclusion 
 
 - **Database schema:** Detailed table structures and foreign keys are defined in the DDL above.
 - **Data analysis:** The queries provide insights into book categories, member activity, employee performance and branch-level metrics.
 - **Summary reports:** CTAS outputs (books_issued, branch_reports, active_members, overdue_fines) support operational decision making and reporting.
+
 
