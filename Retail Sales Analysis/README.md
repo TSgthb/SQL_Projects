@@ -117,7 +117,7 @@ COMMIT TRANSACTION;
 
 The following SQL queries answer specific business questions:
 
-1. **Retrieve all columns for sales made on '2022-11-05':**
+**1. Retrieve all columns for sales made on '2022-11-05'**
 
 ```sql
 SELECT *
@@ -125,7 +125,7 @@ FROM retail_sales
 WHERE sale_date = '2022-11-05';
 ```
 
-2. **Retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in Nov-2022:**
+**2. Retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in Nov-2022**
 
 ```sql
 -- Use a half-open date range for robustness
@@ -136,7 +136,7 @@ WHERE category = 'Clothing'
   AND quantity > 4;
 ```
 
-3. **Calculate the total sales (total_sale) for each category:**
+**3. Calculate the total sales (total_sale) for each category**
 
 ```sql
 SELECT
@@ -148,7 +148,7 @@ GROUP BY category
 ORDER BY net_sale DESC;
 ```
 
-4. **Find average age of customers who purchased items from the 'Beauty' category:**
+**4. Find average age of customers who purchased items from the 'Beauty' category**
 
 ```sql
 SELECT ROUND(AVG(CAST(age AS FLOAT)), 2) AS avg_age
@@ -156,7 +156,7 @@ FROM retail_sales
 WHERE category = 'Beauty';
 ```
 
-5. **Find all transactions where the total_sale is greater than 1000:**
+**5. Find all transactions where the total_sale is greater than 1000**
 
 ```sql
 SELECT *
@@ -165,7 +165,7 @@ WHERE total_sale > 1000
 ORDER BY total_sale DESC;
 ```
 
-6. **Find the total number of transactions (transactions_id) made by each gender in each category:**
+**6. Find the total number of transactions (transactions_id) made by each gender in each category**
 
 ```sql
 SELECT
@@ -177,7 +177,7 @@ GROUP BY category, gender
 ORDER BY category, gender;
 ```
 
-7. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year:**
+**7. Write a SQL query to calculate the average sale for each month. Find out best selling month in each year**
 
 ```sql
 WITH monthly_avg AS (
@@ -198,7 +198,7 @@ WHERE rnk = 1
 ORDER BY year;
 ```
 
-8. **Find the top 5 customers based on the highest total sales:**
+**8. Find the top 5 customers based on the highest total sales**
 
 ```sql
 SELECT TOP (5)
@@ -209,7 +209,7 @@ GROUP BY customer_id
 ORDER BY total_sales DESC;
 ```
 
-9. **Find the number of unique customers who purchased items from each category:**
+**9. Find the number of unique customers who purchased items from each category**
 
 ```sql
 SELECT
@@ -220,7 +220,7 @@ GROUP BY category
 ORDER BY cnt_unique_cs DESC;
 ```
 
-10. **Write a SQL query to create each shift and number of orders (Example morning <12, afternoon between 12 & 17, evening >17):**
+**10. Write a SQL query to create each shift and number of orders (Example morning <12, afternoon between 12 & 17, evening >17)**
 
 ```sql
 WITH hourly_sale AS (
