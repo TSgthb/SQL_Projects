@@ -57,7 +57,22 @@ CREATE TABLE movies_shows
     ms_description VARCHAR(550)
 );
 GO
+```
 
+- **Data Insertion:** Data will be loaded using BULK INSERT from tab delimited file.
+1. There was an error while importing the data at first:
+   
+![dirty](https://github.com/TSgthb/SQL_Projects/blob/b337d952951068f178f7190b0ed11de0e63dff80/Movies%20%26%20Shows%20Analysis/Documents/import_error.png)
+
+2. The source file did not contained standardized data and hence, had to be cleaned before we could import it.
+
+3. Upon further analysis, it was found that row, 8204 had some keywords from the description column of the record of the previous row.
+
+![cleaned](https://github.com/TSgthb/SQL_Projects/blob/b337d952951068f178f7190b0ed11de0e63dff80/Movies%20%26%20Shows%20Analysis/Documents/record_incosistency.png)
+
+4. We cleaned the record and were able to successfully import data using BULK INSERT
+
+```sql  
 -- ==========================================
 -- Bulk Insert Data from Text File
 -- ==========================================
@@ -88,7 +103,7 @@ FROM dbo.movies_shows;
 GO
 ```
 
-Task 2: Identify Duplicate Records by ms_id
+**Task 2: Identify Duplicate Records by ms_id**
 
 ```sql
 -- ============================================================
@@ -423,14 +438,12 @@ GO
 ```
 
 ## Findings and Conclusion
+- **Data Quality Observations:** Several records have missing or blank fields (e.g., director names), which could impact downstream analytics. These gaps should be addressed in future data cleaning steps.
 - **Content Distribution:** The dataset reveals a healthy mix of movies and TV shows, with movies slightly dominating in volume. This helps understand Netflix’s content strategy and user engagement focus.
 - **Rating Trends:** The most common ratings for both movies and TV shows are clustered around family-friendly categories like *TV-MA*, *TV-14*, and *PG-13*, indicating a broad target audience.
 - **Temporal Insights:** A significant portion of content has been added in the last five years, showing Netflix’s aggressive content expansion strategy. The year-wise breakdown also highlights spikes in content acquisition.
 - **Geographic Reach:** Countries like the United States, India, and the United Kingdom contribute the most content. India, in particular, shows a strong upward trend in recent years, with measurable year-over-year growth.
 - **Genre Diversity:** The platform offers a wide range of genres, with *Dramas*, *Comedies*, and *Documentaries* being the most prevalent. This diversity supports Netflix’s global appeal.
 - **Duration Patterns:** Most movies fall within the 90–120 minute range, while TV shows vary widely in season count. A subset of long-running shows (5+ seasons) indicates strong viewer loyalty.
-- **Cast and Crew Analysis:** Actors like *Salman Khan* and directors like *Rajiv Chilaka* appear frequently in Indian content, reflecting regional star power. The top 10 most frequent Indian actors provide insight into casting trends.
 - **Content Classification:** Using keyword-based sentiment tagging (e.g., presence of “kill” or “violence”), content was categorized into *Good*, *Bad*, or *Uncertain*. This can aid in content moderation or parental control features.
-- **Data Quality Observations:** Several records have missing or blank fields (e.g., director names), which could impact downstream analytics. These gaps should be addressed in future data cleaning steps.
-
 
