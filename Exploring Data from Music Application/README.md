@@ -1,4 +1,4 @@
-# Analyzing Movies & Shows on OTT
+# Exploring Music Application Data
 
 ## Project Overview
 
