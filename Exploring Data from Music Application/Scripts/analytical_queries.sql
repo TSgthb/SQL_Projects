@@ -160,7 +160,7 @@ GO
 
 /*
 ===================================================================================
-Section: Category 3 – Advanced Analysis with Window Functions
+Section: Advanced Analysis with Window Functions
 ===================================================================================
 */
 
