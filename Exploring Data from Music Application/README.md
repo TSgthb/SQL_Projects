@@ -439,4 +439,31 @@ SELECT
     plv.total_views
 FROM pivot_likes_views AS plv;
 GO
+```
+
+### 3. Query Optimizations
+
+The general observations from our queries is that:
+
+1. We are querying from a view (view_music_info) built on top of music_info.
+2. The queries span basic aggregations, filtering, window functions, and CTEs.
+3. Most queries are read-heavy and analytical, ideal for indexing and materialization strategies.
+
+So, based on the above points, we can follow these recommendations to improve our performance of the queries:
+
+1. Consider materializing the view `view_music_info` into a physical table. This avoids recomputation and speeds up downstream analytics.
+2. For our analytical queries, the common pattern that is observed - `COUNT(DISTINCT ...)`, `SUM(...)`, `GROUP BY track, album, artist`, can benefit from the creation of a non-clustered index:
+
+```sql
+-- Composite index to support grouping and filtering
+CREATE NONCLUSTERED INDEX idx_musicinfo_grouping
+ON dbo.music_info (track, album, artist)
+INCLUDE (likes, views, comments, official_video, licensed, stream);
+```
+
+Below are the before and after index implementation query execution statistics for **Task 23** as an example:
+
+1. Before index implementation:
+![b4index]()
+
 
