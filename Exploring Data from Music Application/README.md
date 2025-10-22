@@ -464,7 +464,25 @@ INCLUDE (likes, views, comments, official_video, licensed, stream);
 Below are the before and after index implementation query execution statistics for **Task 23** as an example:
 
 - Before index implementation:
+
 ![b4index](https://github.com/TSgthb/SQL_Projects/blob/66040c9a3e19ee02652061104522d2e61d1d92ce/Exploring%20Data%20from%20Music%20Application/Documents/b4_index.png)
 
-- After index implementation:
+- After index implementation (with lesser execution time):
+
 ![after_index](https://github.com/TSgthb/SQL_Projects/blob/66040c9a3e19ee02652061104522d2e61d1d92ce/Exploring%20Data%20from%20Music%20Application/Documents/after_index.png)
+
+### 4. Findings and Conclusions
+
+- **Data Integrity**: Initial cleaning revealed several records with invalid or missing song durations. Removing these ensured more reliable analysis across duration-based metrics.
+
+- **Content Distribution**: The dataset includes a diverse range of artists, albums, and track types. Singles dominate in volume, while albums show richer audio feature variation.
+
+- **Engagement Insights**: Tracks with official videos consistently show higher views and likes, confirming the impact of visual content on listener engagement.
+
+- **Platform Trends**: Spotify emerged as the most frequent platform for track playback, highlighting its dominance in music streaming.
+
+- **Audio Feature Patterns**: Danceability and energy vary significantly across albums. High-energy tracks tend to correlate with higher stream counts, especially in top-performing artists.
+
+- **Advanced Metrics**: Window functions revealed the top 3 most-viewed tracks per artist, while cumulative likes analysis helped identify momentum-building tracks.
+
+- **Performance Optimization**: Materializing the view and implementing targeted indexes (e.g., on track, album, views) significantly reduced query execution time, especially for rolling aggregations.
