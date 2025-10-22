@@ -32,7 +32,7 @@ GO
 
 - **Data import & table creation:** Import the dataset as a flatfile in a table named `music_info`. Verify the automatically declared data types for table columns and the data imported.
 
-![data_import_using_flatfile]()
+![data_import_using_flatfile](https://github.com/TSgthb/SQL_Projects/blob/b9eade5df30d862589312ac4d3f14b5a606b1424/Exploring%20Data%20from%20Music%20Application/Documents/importing_flat_file.png)
 
 - **Data cleaning:** Remove the invalid records where the duration of the song is NULL, 0, blank or space.
 
@@ -439,3 +439,4 @@ SELECT
     plv.total_views
 FROM pivot_likes_views AS plv;
 GO
+
