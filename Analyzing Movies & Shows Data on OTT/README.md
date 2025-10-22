@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project demonstrates the implementation of a data analysis pipeline for Netflix Movies and TV Shows using SQL Server to extract valuable insights and answer varioius various business questions.
+This project demonstrates the implementation of a data analysis pipeline for Netflix movies and TV shows using SQL Server to extract valuable insights and answer varioius various business questions.
 
 ## Objectives
 
@@ -446,4 +446,5 @@ GO
 - **Genre Diversity:** The platform offers a wide range of genres, with *Dramas*, *Comedies*, and *Documentaries* being the most prevalent. This diversity supports Netflix’s global appeal.
 - **Duration Patterns:** Most movies fall within the 90–120 minute range, while TV shows vary widely in season count. A subset of long-running shows (5+ seasons) indicates strong viewer loyalty.
 - **Content Classification:** Using keyword-based sentiment tagging (e.g., presence of “kill” or “violence”), content was categorized into *Good*, *Bad*, or *Uncertain*. This can aid in content moderation or parental control features.
+
 
