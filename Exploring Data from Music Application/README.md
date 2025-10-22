@@ -463,7 +463,8 @@ INCLUDE (likes, views, comments, official_video, licensed, stream);
 
 Below are the before and after index implementation query execution statistics for **Task 23** as an example:
 
-1. Before index implementation:
-![b4index]()
+- Before index implementation:
+![b4index](https://github.com/TSgthb/SQL_Projects/blob/66040c9a3e19ee02652061104522d2e61d1d92ce/Exploring%20Data%20from%20Music%20Application/Documents/b4_index.png)
 
-
+- After index implementation:
+![after_index](https://github.com/TSgthb/SQL_Projects/blob/66040c9a3e19ee02652061104522d2e61d1d92ce/Exploring%20Data%20from%20Music%20Application/Documents/after_index.png)
