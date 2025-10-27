@@ -130,3 +130,50 @@ FROM
 WHERE
 	product_sales_rank <= 3
 GO
+
+-- 7. How many unique customers are there in each city who have purchased coffee products?
+
+SELECT
+	ci.city_name,
+	COUNT(DISTINCT cu.customer_id) AS total_customers
+FROM dbo.city AS ci
+	INNER JOIN dbo.customers AS cu
+		ON city.city_id = customers.city_id
+GROUP BY
+	ci.city_name
+GO
+
+-- 8. Find each city and their average sale per customer and avg rent per customer
+
+SELECT
+	cu.city_name,
+	ROUND(SUM(sa.total) / COUNT(DISTINCT cu.customer_id),2) AS avg_sale_amount,
+	ROUND(AVG(ci.estimated_rent) / COUNT(DISTINCT cu.customer_id),2) AS avg_rent
+FROM dbo.city AS ci
+	INNER JOIN dbo.customers cu
+		ON ci.customer_id = cu.customer_id
+	INNER JOIN dbo.sales sa
+		ON cu.customer_id = sa.customer_id
+GROUP BY cu.city_name
+GO
+
+-- 9. Sales growth rate: Calculate the percentage growth (or decline) in sales over different time periods (monthly).
+
+WITH mom_analyze AS
+(
+SELECT
+	SUM(total) AS curr_month_sales,
+	LAG(SUM(total)) OVER(PARTITION BY DATEPART(YEAR,sale_date), DATEPART(MONTH,sale_date) sale_date ASC) AS prev_month_sales
+FROM
+	dbo.sales
+GROUP BY 
+	DATEPART(YEAR,sale_date),
+	DATEPART(MONTH,sale_date)
+ORDER BY 
+	sale_date ASC
+) 
+SELECT 
+	*,
+	ROUND((CAST((prev_month_sales - curr_month_sales) AS FLOAT) / prev_month_sales) * 100, 1) AS mom_sales_analyze
+FROM mom_analyze
+GO
