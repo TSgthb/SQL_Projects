@@ -131,6 +131,9 @@ WHERE
 	product_sales_rank <= 3
 GO
 
+USE coffee_shop;
+GO
+
 -- 7. How many unique customers are there in each city who have purchased coffee products?
 
 SELECT
@@ -138,7 +141,7 @@ SELECT
 	COUNT(DISTINCT cu.customer_id) AS total_customers
 FROM dbo.city AS ci
 	INNER JOIN dbo.customers AS cu
-		ON city.city_id = customers.city_id
+		ON ci.city_id = cu.city_id
 GROUP BY
 	ci.city_name
 GO
@@ -146,34 +149,88 @@ GO
 -- 8. Find each city and their average sale per customer and avg rent per customer
 
 SELECT
-	cu.city_name,
+	ci.city_name,
 	ROUND(SUM(sa.total) / COUNT(DISTINCT cu.customer_id),2) AS avg_sale_amount,
 	ROUND(AVG(ci.estimated_rent) / COUNT(DISTINCT cu.customer_id),2) AS avg_rent
 FROM dbo.city AS ci
 	INNER JOIN dbo.customers cu
-		ON ci.customer_id = cu.customer_id
+		ON ci.city_id = cu.city_id
 	INNER JOIN dbo.sales sa
 		ON cu.customer_id = sa.customer_id
-GROUP BY cu.city_name
+GROUP BY ci.city_name
 GO
 
 -- 9. Sales growth rate: Calculate the percentage growth (or decline) in sales over different time periods (monthly).
 
-WITH mom_analyze AS
+WITH month_sales AS
 (
 SELECT
-	SUM(total) AS curr_month_sales,
-	LAG(SUM(total)) OVER(PARTITION BY DATEPART(YEAR,sale_date), DATEPART(MONTH,sale_date) sale_date ASC) AS prev_month_sales
+	DATEPART(YEAR,sale_date) AS year_of_sale,
+	DATEPART(MONTH,sale_date) AS month_of_sale,
+	SUM(total) AS curr_month_sales
 FROM
 	dbo.sales
 GROUP BY 
 	DATEPART(YEAR,sale_date),
 	DATEPART(MONTH,sale_date)
-ORDER BY 
-	sale_date ASC
-) 
+),
+mom_analysis AS
+(
+SELECT 
+	year_of_sale,
+	month_of_sale,
+	curr_month_sales,
+	LAG(curr_month_sales) OVER(PARTITION BY year_of_sale ORDER BY month_of_sale ASC) AS prev_month_sales
+FROM 
+	month_sales
+)
 SELECT 
 	*,
 	ROUND((CAST((prev_month_sales - curr_month_sales) AS FLOAT) / prev_month_sales) * 100, 1) AS mom_sales_analyze
-FROM mom_analyze
+FROM mom_analysis
+GO
+
+-- 10. Identify top 3 city based on highest sales, return city name, total sale, total rent, total customers, estimated coffee consumer
+
+-- dbo.city -- city name, total rent, estimated coffee consumers
+-- dbo.sales -- total sales per city, total customers
+-- dbo.customer -- to join sales and city
+
+SELECT 
+	ci.city_name,
+	SUM(sa.total) AS total_revenue,
+	ROUND(SUM(sa.total) / COUNT(DISTINCT cu.customer_id),2) AS avg_revenue_per_person,
+	MAX(ci.estimated_rent) AS total_rent,
+	ROUND(MAX(ci.estimated_rent) / COUNT(DISTINCT cu.customer_id),2) AS avg_rent_per_person,
+	COUNT(DISTINCT cu.customer_id) AS total_customers,
+	ROUND(CAST(MAX(ci.population) AS FLOAT) / 1000000,2) AS [total_population(in million)],
+	ROUND(CAST(MAX(ci.population) * 0.25 AS FLOAT) / 1000000,2) AS [coffee_drinkers(in million)]
+INTO #midsales
+FROM dbo.city ci
+	INNER JOIN dbo.customers cu
+		ON ci.city_id = cu.city_id
+	INNER JOIN dbo.sales sa
+		ON cu.customer_id = sa.customer_id
+GROUP BY
+	ci.city_name
+GO
+
+SELECT TOP (5)
+	*,
+	ROUND(((total_revenue - total_rent)/total_revenue) * 100, 2) AS perc_savings,
+	CAST(total_customers AS FLOAT) / 0.25 AS customer_retention 
+FROM 
+	dbo.#midsales
+ORDER BY
+	perc_savings DESC
+GO
+
+SELECT TOP (5)
+	*,
+	ROUND(((total_revenue - total_rent)/total_revenue) * 100, 2) AS perc_savings,
+	CAST(total_customers AS FLOAT) / 0.25 AS customer_retention 
+FROM 
+	dbo.#midsales
+ORDER BY
+	total_revenue DESC
 GO
