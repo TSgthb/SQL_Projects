@@ -15,6 +15,11 @@ The project aims to showcase the analysis conducted on the sales data of a ficti
 
 ### 1. Database Setup
 
+- **ERD creation:** Create an entity-relationship diagram for the database showing how different tables connect.
+
+![ERD](https://github.com/TSgthb/SQL_Projects/blob/d9d3c3354d136001c4de4c4ff1ba562761ec824e/Exploring%20Coffee%20Shop%20Sales%20Data/Documents/entity_relationship_diagram.png)
+*__Note:__ The above diagram shows only primary and foreign keys of tables.*
+
 - **Database creation:** Create a database named `coffee_shop`.
 
 ```sql
@@ -352,25 +357,29 @@ INNER JOIN dbo.sales sa ON cu.customer_id = sa.customer_id
 GROUP BY ci.city_name;
 GO
 
---Rank Cities by Net Savings
-
 SELECT TOP (5) *,
     ROUND(((total_revenue - total_rent) / total_revenue) * 100, 2) AS perc_savings,
-    CAST(total_customers AS FLOAT) / 0.25 AS customer_retention 
+    ROUND(CAST(total_customers AS FLOAT) / [coffee_drinkers(in million)], 2) AS market_capture,
+    ROUND((total_rent / total_revenue) * 100,2) AS rent_rev_ratio
 FROM dbo.#midsales
 ORDER BY perc_savings DESC;
 GO
 
-
---Rank Cities by Total Revenue
-
 SELECT TOP (5) *,
     ROUND(((total_revenue - total_rent) / total_revenue) * 100, 2) AS perc_savings,
-    CAST(total_customers AS FLOAT) / 0.25 AS customer_retention 
+    ROUND(CAST(total_customers AS FLOAT) / [coffee_drinkers(in million)], 2) AS market_capture,
+    ROUND((total_rent / total_revenue) * 100,2) AS rent_rev_ratio
 FROM dbo.#midsales
 ORDER BY total_revenue DESC;
 GO
 ```
 
+### 4. Conclusion and Recommendations
 
+Based on the data from above queries and evaluating profitability, customer penetration, and cost efficiency, the probablr top three cities for coffee business expansion seems to be:
 
+1. **Jaipur:** With the highest market capture, 69% and excellent savings and rent efficiency, Jaipur offers a well established customer base and strong margins. These factors make it the most balanced and scalable location.
+
+2. **Pune:** Leading in profitability with 98.78% savings and rent-to-revenue ratio, 1.22%, Pune too stands out as a high margin and low cost market with good customer penetration. This makes it ideal for strategic growth options.
+
+3. **Chennai:** This has a strong revenue and savings performance, with at around 15.16% market capture. It seems like a promising candidate for expansion if customer acquisition strategies are prioritized.
