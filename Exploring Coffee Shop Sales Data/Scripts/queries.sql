@@ -192,10 +192,6 @@ GO
 
 -- 10. Identify top 3 city based on highest sales, return city name, total sale, total rent, total customers, estimated coffee consumer
 
--- dbo.city -- city name, total rent, estimated coffee consumers
--- dbo.sales -- total sales per city, total customers
--- dbo.customer -- to join sales and city
-
 SELECT 
 	ci.city_name,
 	SUM(sa.total) AS total_revenue,
@@ -215,6 +211,7 @@ GROUP BY
 	ci.city_name
 GO
 
+-- Viewing the data using the net savings percentage per city
 SELECT TOP (5)
 	*,
 	ROUND(((total_revenue - total_rent)/total_revenue) * 100, 2) AS perc_savings,
@@ -225,6 +222,7 @@ ORDER BY
 	perc_savings DESC
 GO
 
+-- Viewing the data using the net revenue per city 	
 SELECT TOP (5)
 	*,
 	ROUND(((total_revenue - total_rent)/total_revenue) * 100, 2) AS perc_savings,
