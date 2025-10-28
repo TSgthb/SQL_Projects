@@ -28,7 +28,7 @@ USE coffee_shop;
 GO
 ```
 
-- **Creating required tables:** Create tables `city`, `customers`, `prodcuts` and `sales` to store the coffee store data. Foreign key columns are linked to appropriate columns to ensure that applicable data can be joined and queried.
+- **Creating required tables:** Create tables `city`, `customers`, `products` and `sales` to store the coffee store data. Foreign key columns are linked to appropriate columns to ensure that applicable data can be joined and queried.
 
 ```sql
 -- =====================================================
@@ -371,5 +371,6 @@ FROM dbo.#midsales
 ORDER BY total_revenue DESC;
 GO
 ```
+
 
 
