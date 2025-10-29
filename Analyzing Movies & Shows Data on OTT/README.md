@@ -1,10 +1,10 @@
 # Analyzing Movies & Shows on OTT
 
-## Project Overview
-
+<p align="justify">
 This project demonstrates the implementation of a data analysis pipeline for Netflix movies and TV shows using SQL Server to extract valuable insights and answer various business questions.
+</p>
 
-## Objectives
+## Project Objectives
 
 1. **Set up a database and populate it with the provided data by importing it from a tab-delimited source.**
 2. **Perform basic exploratory data analysis to understand dataset shape and distributions.**
@@ -92,7 +92,7 @@ GO
 - **The following queries answers business questions related to content type, release trends, genres, durations, cast appearances, and more.**
 - **This section queries uses CTEs, subqueries, aggregation, ranking and string manipulation. It also shows the usage of application of filters for NULLs, empty strings, and specific patterns.**
 
-**Task 1: Preview the Dataset**
+1. **Preview the Dataset**
 
 ```sql
 -- ============================================================
@@ -103,7 +103,7 @@ FROM dbo.movies_shows;
 GO
 ```
 
-**Task 2: Identify Duplicate Records by ms_id**
+2. **Identify Duplicate Records by ms_id**
 
 ```sql
 -- ============================================================
@@ -118,7 +118,7 @@ HAVING COUNT(ms_id) > 1;
 GO
 ```
 
-**Task 3: List All Unique Content Types**
+3. **List All Unique Content Types**
 
 ```sql
 -- ============================================================
@@ -130,7 +130,7 @@ FROM dbo.movies_shows;
 GO
 ```
 
-**Task 4: Count Entities by Content Type**
+4. **Count Entities by Content Type**
 
 ```sql
 -- ============================================================
@@ -144,7 +144,7 @@ GROUP BY ms_type;
 GO
 ```
 
-**Task 5: Filter Movies Released in 2021**
+5. **Filter Movies Released in 2021**
 
 ```sql
 -- ============================================================
@@ -157,7 +157,7 @@ WHERE release_year = 2021
 GO
 ```
 
-**Task 6: Top Rating per Content Type**
+6. **Top Rating per Content Type**
 
 ```sql
 -- ============================================================
@@ -179,7 +179,7 @@ FROM ranked_ms AS rms
 WHERE rms.rank_ratings = 1;
 GO
 ```
-**Task 7: Top 5 Countries by Content Count**
+7. **Top 5 Countries by Content Count**
 
 ```sql
 -- ============================================================
@@ -206,7 +206,7 @@ ORDER BY total_content DESC;
 GO
 ```
 
-**Task 8: Analyze Duration Format for Movies**
+8. **Analyze Duration Format for Movies**
 
 ```sql
 -- ============================================================
@@ -221,7 +221,7 @@ GROUP BY CHARINDEX('min', duration);
 GO
 ```
 
-**Task 9: Longest Movie Durations**
+9. **Longest Movie Durations**
 
 ```sql
 -- ============================================================
@@ -239,7 +239,7 @@ ORDER BY mov_run DESC;
 GO
 ```
 
-**Task 10: Join Movies with Last 5 Years of Additions**
+10. **Join Movies with Last 5 Years of Additions**
 
 ```sql
 -- ============================================================
@@ -263,7 +263,7 @@ ORDER BY CONVERT(INT, TRIM(RIGHT(ms.date_added, 4))) DESC;
 GO
 ```
 
-**Task 11: Filter by Specific Director**
+11. **Filter by Specific Director**
 
 ```sql
 -- ============================================================
@@ -275,7 +275,7 @@ WHERE director LIKE '%Rajiv Chilaka%';
 GO
 ```
 
-**Task 12: TV Shows with More Than 5 Seasons**
+12. **TV Shows with More Than 5 Seasons**
 
 ```sql
 -- ============================================================
@@ -303,7 +303,7 @@ ORDER BY season_count DESC;
 GO
 ```
 
-**Task 13: Count by Genre**
+13. **Count by Genre**
 
 ```sql
 -- ============================================================
@@ -320,7 +320,7 @@ GROUP BY TRIM(value);
 GO
 ```
 
-**Task 14: Yearly Content from India with Percent Share**
+14. **Yearly Content from India with Percent Share**
 
 ```sql
 -- ============================================================
@@ -346,7 +346,7 @@ ORDER BY perc_yearly_count DESC;
 GO
 ```
 
-**Task 15: List All Documentary Movies**
+15. **List All Documentary Movies**
 
 ```sql
 -- ============================================================
@@ -364,7 +364,7 @@ WHERE ms_type = 'Movie'
 GO
 ```
 
-**Task 16: Find Records with Missing Director InfoA**
+16. **Find Records with Missing Director InfoA**
 
 ```sql
 -- ============================================================
@@ -377,7 +377,7 @@ WHERE director IS NULL
 GO
 ```
 
-**Task 17: Salman Khan Movies in the Last 10 Years**
+17. **Salman Khan Movies in the Last 10 Years**
 
 ```sql
 -- ============================================================
@@ -395,7 +395,7 @@ ORDER BY release_year DESC;
 GO
 ```
 
-**Task 18: Top 10 Most Frequent Indian Movie Actors**
+18. **Top 10 Most Frequent Indian Movie Actors**
 
 ```sql
 -- ============================================================
@@ -415,7 +415,7 @@ ORDER BY total_appearances DESC;
 GO
 ```
 
-**Task 19: Classify Content by Description Sentiment**
+19. **Classify Content by Description Sentiment**
 
 ```sql
 -- ============================================================
@@ -446,6 +446,7 @@ GO
 - **Genre Diversity:** The platform offers a wide range of genres, with *Dramas*, *Comedies*, and *Documentaries* being the most prevalent. This diversity supports Netflix’s global appeal.
 - **Duration Patterns:** Most movies fall within the 90–120 minute range, while TV shows vary widely in season count. A subset of long-running shows (5+ seasons) indicates strong viewer loyalty.
 - **Content Classification:** Using keyword-based sentiment tagging (e.g., presence of “kill” or “violence”), content was categorized into *Good*, *Bad*, or *Uncertain*. This can aid in content moderation or parental control features.
+
 
 
 
