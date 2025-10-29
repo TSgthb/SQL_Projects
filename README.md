@@ -1,7 +1,7 @@
 ## Repository Overview
 
 <p align="justify">
-This repository contains a collection of projects that walk demonstrates the end-to-end workflow of a data analytics pipeline, showcasing practical implementations of data engineering and analytical concepts using SQL. Each project is designed to simulate real-world scenarios and includes the following stages:
+This repository contains a collection of projects that demonstrates the end-to-end workflow of a data analytics pipeline, showcasing practical implementations of data engineering and analytical concepts using SQL. Each project is designed to simulate real-world scenarios and includes the following stages:
 </p>
 
 - __Data Extraction__: This mainly includes pulling datasets from online sources, such as Kaggle.
