@@ -23,3 +23,6 @@ The projects span a wide range of concepts, ranging from foundational techniques
 
 ## Tags
 ![Static Badge](https://img.shields.io/badge/DBMS-Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Language-T--SQL-blue?style=for-the-badge) 
+
+
