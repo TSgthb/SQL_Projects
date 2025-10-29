@@ -1,7 +1,7 @@
 # Exploring Coffee Shop Sales Data
 
 <p align="justify">
-This project analyzes sales data from a fictional online coffee brand, Monday Coffee, operating since January 2023. With plans to expand into physical retail across India, the goal is to identify the top three cities for store launch based on consumer demand, sales performance, and demographic indicators.
+This project analyzes sales data from a fictional online coffee brand, Monday Coffee, operating since January 2023. With plans to expand into physical retail across India, the goal is to identify the top three cities for store launch based on consumer demand, sales performance, and demographic indicators. It involves database design, data ingestion from CSV sources, CRUD operations, and advanced T-SQL queries for reporting and decision support.
 </p>
 
 ## Project Objectives
@@ -383,5 +383,6 @@ Based on the data from above queries and evaluating profitability, customer pene
 2. **Pune:** Leading in profitability with 98.78% savings and rent-to-revenue ratio, 1.22%, Pune too stands out as a high margin and low cost market with good customer penetration. This makes it ideal for strategic growth options.
 
 3. **Chennai:** This has a strong revenue and savings performance, with at around 15.16% market capture. It seems like a promising candidate for expansion if customer acquisition strategies are prioritized.
+
 
 
