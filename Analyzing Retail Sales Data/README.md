@@ -1,10 +1,10 @@
 # Retail Sales Analysis
 
-## Project Overview
-
+<p align="justify">
 The project involves setting up a retail sales database, cleaning and standardizing data within it, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries using SQL Server.
+</p>
 
-## Objectives
+## Project Objectives
 
 1. **Set up a retail sales database and populate it with the provided sales data.**
 2. **Identify and remove records with missing or null values.**
