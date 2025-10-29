@@ -1,15 +1,13 @@
 # Exploring Coffee Shop Sales Data
 
-## Project Overview
-
 The project aims to showcase the analysis conducted on the sales data of a fictitious coffee store, Monday Coffee, that has been selling its products online since January 2023. Monday Coffee wants to expand their business and open stores in other parts of India as well. Hence, this project aims to help make business decisions for expansion of the stores in the potential top three major cities in India, based on consumer demand, sales performance and other relevant demographics. The critical steps involved in this project are database and schema creation, analyzing and loading data from CSV sources, performing CRUD operations and using SQL advanced queries for operational reporting and data maintenance.
 
-## Objectives
+## Project Objectives
 
-**1. Set up a database and required tables.**
-**2. Import the data in tables using external CSV files**
-**3. Use SQL queries to answer business questions and derive actionable insights.**
-**4. Provide recommendations for potential business expansion.**
+1. **Set up a database and required tables.**
+2. **Import the data in tables using external CSV files**
+3. **Use SQL queries to answer business questions and derive actionable insights.**
+4. **Provide recommendations for potential business expansion.**
 
 ## Project Structure
 
@@ -152,9 +150,9 @@ GO
 
 ### 3. Data Analytics and Insights
 
-- **The following queries answers various business questions and uncover important insights. This section queries utilizes advance SQL concepts such as CTEs, temp table, aggregations, window functions and date manipulation.**
+**The following queries answers various business questions and uncover important insights. This section queries utilizes advance SQL concepts such as CTEs, temp table, aggregations, window functions and date manipulation.**
 
-**Task 1: Estimate Coffee Consumers by City**
+1. **Estimate Coffee Consumers by City**
 
 ```sql
 -- ============================================================
@@ -169,7 +167,7 @@ FROM dbo.city;
 GO
 ```
 
-**Task 2: Total Revenue in Q4 2023**
+2. **Total Revenue in Q4 2023**
 
 ```sql
 -- ============================================================
@@ -182,7 +180,7 @@ WHERE sale_date >= '2023-10-01' AND sale_date <= '2023-12-31';
 GO
 ```
 
-**Task 3: Coffee Product Sales Volume**
+3. **Coffee Product Sales Volume**
 
 ```sql
 -- ============================================================
@@ -200,7 +198,7 @@ ORDER BY items_sold DESC;
 GO
 ```
 
-**Task 4: Average Sales Per Customer by City**
+4. **Average Sales Per Customer by City**
 
 ```sql
 -- ============================================================
@@ -230,7 +228,7 @@ ORDER BY per_person_average_spend DESC;
 GO
 ```
 
-**Task 5: City Population and Customer Count**
+5. **City Population and Customer Count**
 
 ```sql
 -- ============================================================
@@ -247,7 +245,7 @@ ORDER BY total_coffee_drinker_population_in_millions DESC;
 GO
 ```
 
-**Task 6: Top 3 Selling Products by City**
+6. **Top 3 Selling Products by City**
 
 ```sql
 -- ============================================================
@@ -272,7 +270,7 @@ WHERE product_sales_rank <= 3;
 GO
 ```
 
-**Task 7: Unique Customers by City**
+7. **Unique Customers by City**
 
 ```sql
 -- ============================================================
@@ -290,7 +288,7 @@ GROUP BY ci.city_name;
 GO
 ```
 
-**Task 8: Average Sale and Rent Per Customer**
+8. **Average Sale and Rent Per Customer**
 
 ```sql
 -- ============================================================
@@ -307,7 +305,7 @@ GROUP BY ci.city_name;
 GO
 ```
 
-**Task 9: Monthly Sales Growth Rate**
+9. **Monthly Sales Growth Rate**
 
 ```sql
 -- ============================================================
@@ -335,7 +333,7 @@ FROM mom_analysis;
 GO
 ```
 
-**Task 10: Top Cities by Revenue and Savings**
+10. **Top Cities by Revenue and Savings**
 
 ```sql
 -- ============================================================
@@ -383,3 +381,4 @@ Based on the data from above queries and evaluating profitability, customer pene
 2. **Pune:** Leading in profitability with 98.78% savings and rent-to-revenue ratio, 1.22%, Pune too stands out as a high margin and low cost market with good customer penetration. This makes it ideal for strategic growth options.
 
 3. **Chennai:** This has a strong revenue and savings performance, with at around 15.16% market capture. It seems like a promising candidate for expansion if customer acquisition strategies are prioritized.
+
