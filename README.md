@@ -1,3 +1,6 @@
+![Static Badge](https://img.shields.io/badge/DBMS-Microsoft%20SQL%20Server-CC2927?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Language-T--SQL-blue?style=for-the-badge)
+
 ## Repository Overview
 
 <p align="justify">
@@ -15,14 +18,9 @@ The projects span a wide range of concepts, ranging from foundational techniques
 ## Repository Structure
 
 - [SQL Projects](https://github.com/TSgthb/SQL_Projects/tree/main)
+  - [Data Warehousing and Analysis Using SQL Server](dadcca)
   - [Analyzing Retail Sales Data](https://github.com/TSgthb/SQL_Projects/tree/main/Analyzing%20Retail%20Sales%20Data)
   - [Creating Library Data Management System](https://github.com/TSgthb/SQL_Projects/tree/main/Creating%20Library%20Data%20Management%20System)
   - [Analyzing Movies & Shows Data on OTT](https://github.com/TSgthb/SQL_Projects/tree/main/Analyzing%20Movies%20%26%20Shows%20Data%20on%20OTT)
   - [Eploring Data from Music Application](https://github.com/TSgthb/SQL_Projects/tree/main/Exploring%20Data%20from%20Music%20Application)
   - [Exploring Coffee Shop Sales Data](https://github.com/TSgthb/SQL_Projects/tree/main/Exploring%20Coffee%20Shop%20Sales%20Data)
-
-## Tags
-![Static Badge](https://img.shields.io/badge/DBMS-Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
-![Static Badge](https://img.shields.io/badge/Language-T--SQL-blue?style=for-the-badge) 
-
-
