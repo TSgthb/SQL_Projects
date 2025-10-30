@@ -1,6 +1,6 @@
 ![DBMS](https://img.shields.io/badge/DBMS-Microsoft%20SQL%20Server-CC2927?style=for-the-badge)
 ![Language](https://img.shields.io/badge/Language-T--SQL-blue?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/TSgthb/SQL_Projects?style=for-the-badge&label=Last%20committed&color=white)
+![GitHub last commit](https://img.shields.io/github/last-commit/TSgthb/SQL_Projects?style=for-the-badge&label=Last%20committed&color=00A396)
 
 ## Repository Overview
 
