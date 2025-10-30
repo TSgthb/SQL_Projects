@@ -439,13 +439,21 @@ GO
 
 ## Findings and Conclusion
 - **Data Quality Observations:** Several records have missing or blank fields (e.g., director names), which could impact downstream analytics. These gaps should be addressed in future data cleaning steps.
+
 - **Content Distribution:** The dataset reveals a healthy mix of movies and TV shows, with movies slightly dominating in volume. This helps understand Netflix’s content strategy and user engagement focus.
+
 - **Rating Trends:** The most common ratings for both movies and TV shows are clustered around family-friendly categories like *TV-MA*, *TV-14*, and *PG-13*, indicating a broad target audience.
+
 - **Temporal Insights:** A significant portion of content has been added in the last five years, showing Netflix’s aggressive content expansion strategy. The year-wise breakdown also highlights spikes in content acquisition.
+
 - **Geographic Reach:** Countries like the United States, India, and the United Kingdom contribute the most content. India, in particular, shows a strong upward trend in recent years, with measurable year-over-year growth.
+
 - **Genre Diversity:** The platform offers a wide range of genres, with *Dramas*, *Comedies*, and *Documentaries* being the most prevalent. This diversity supports Netflix’s global appeal.
+
 - **Duration Patterns:** Most movies fall within the 90–120 minute range, while TV shows vary widely in season count. A subset of long-running shows (5+ seasons) indicates strong viewer loyalty.
+
 - **Content Classification:** Using keyword-based sentiment tagging (e.g., presence of “kill” or “violence”), content was categorized into *Good*, *Bad*, or *Uncertain*. This can aid in content moderation or parental control features.
+
 
 
 
