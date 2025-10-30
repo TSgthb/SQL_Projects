@@ -11,15 +11,18 @@ Each project is designed to simulate real-world scenarios and includes the follo
 </p>
 
 - __Data Extraction__: This includes pulling datasets from online sources, such as Kaggle.
+
 - __Data Ingestion & Cleaning__: This involves importing raw data which is present in the form of flat files into a structured environment that has been prepared by analyzing the requirements, handling missing values, duplicates, and inconsistencies and finally standardizing formats for dates, strings, and categorical variables.
+
 - __Data Transformation & Analysis__: This includes the creation of derived columns, calculated metrics and aggregations to reshape and enrich the data, support analysis and derive insights to solve business problems.
 
 <p align="justify">
 The projects span a wide range of concepts, ranging from: 
 </p>
 
-- __Foundational techniques__ like basic data exploration, string operations, conditional logic and date manipulations, to
-- __Advanced SQL features__ including aggregations, window functions, common table expressions (CTEs), subqueries, temporary tables, views and stored procedures for modular and reusable logic.
+- __Foundational Techniques__: Includes basic data exploration, string operations, conditional logic and date manipulations.
+
+- __Advanced SQL Features__: Includes aggregations, window functions, common table expressions (CTEs), subqueries, temporary tables, views and stored procedures for modular and reusable logic.
 
 ## Repository Structure
 
