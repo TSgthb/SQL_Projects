@@ -158,7 +158,7 @@ GO
 - **Update:** Update member or book information as required.
 - **Delete:** Remove specific records with care and verification.
 
-**1. Create a new book record**
+1. **Create a new book record**
 
 ```sql
 /*
@@ -190,7 +190,7 @@ SELECT *
 FROM dbo.books;
 ```
 
-**2. Update an existing member's name**
+2. **Update an existing member's name**
 
 ```sql
 /* 
@@ -208,7 +208,7 @@ SET member_name = 'John Wick'
 WHERE member_id = 'C119';
 ```
 
-**3. Delete a record from the issued_status table**
+3. **Delete a record from the issued_status table**
 
 ```sql
 /* 
@@ -225,7 +225,7 @@ DELETE FROM dbo.issued_status
 WHERE issued_id = 'IS107';
 ```
 
-**4. retrieve all books issued by a specific employee**
+4. **Retrieve all books issued by a specific employee**
 
 ```sql
 ------------------------------------------------------------
@@ -240,7 +240,7 @@ FROM dbo.issued_status
 WHERE issued_emp_id = 'E101';
 ```
 
-**5. List members who have issued more than one book**
+5. **List members who have issued more than one book**
 
 ```sql
 /* 
@@ -267,7 +267,7 @@ ORDER BY count_of_books DESC;
 
 Following summary tables have been created to accelerate reporting and analytics:
 
-**6. Create summary table of books issued**
+6. **Create summary table of books issued**
 
 ```sql
 /* 
@@ -286,7 +286,7 @@ GROUP BY issued_book_name;
 SELECT * FROM dbo.books_issued;
 ```
 
-**7. Create a table of active members**
+7. **Create a table of active members**
 
 ```sql
 ------------------------------------------------------------
@@ -314,7 +314,7 @@ INNER JOIN
 WHERE DATEDIFF(DAY, last_issue, GETDATE()) < 60;
 ```
 
-**8. Create a table of books with high rental price**
+8. **Create a table of books with high rental price**
 
 ```sql
 /* 
@@ -333,7 +333,7 @@ WHERE rental_price > 7.00;
 
 The below scripts include a variety of reporting queries to support operations and analytics:
 
-**9. Retrieve all books in a specific category**
+9. **Retrieve all books in a specific category**
 
 ```sql
 /* 
@@ -348,7 +348,7 @@ FROM dbo.books
 WHERE category = 'Classic';
 ```
 
-**10. Find total rental income by category**
+10. **Find total rental income by category**
 
 ```sql
 /* 
@@ -364,7 +364,7 @@ FROM dbo.books
 GROUP BY category;
 ```
 
-**11. List members who registered in the last 180 days**
+11. **List members who registered in the last 180 days**
 
 ```sql
 /* 
@@ -381,7 +381,7 @@ FROM dbo.members
 WHERE DATEDIFF(DAY, reg_date, GETDATE()) <= 180;
 ```
 
-**12. List employees with their branch manager's name and branch details**
+12. **List employees with their branch manager's name and branch details**
 
 ```sql
 /* 
@@ -415,7 +415,7 @@ INNER JOIN CTE AS man_det
     ON emp2.branch_id = man_det.branch_id;
 ```
 
-**13. Retrieve the list of books not yet returned**
+13. **Retrieve the list of books not yet returned**
 
 ```sql
 /* 
@@ -434,7 +434,7 @@ LEFT JOIN dbo.return_status AS rb
 WHERE rb.return_book_isbn IS NULL;
 ```
 
-**14. Identify members with overdue books**
+14. **Identify members with overdue books**
 
 ```sql
 /*
@@ -472,7 +472,7 @@ WHERE CTE.days_passed > 0;
 
 The following scripts include stored procedures and more complex reporting:
 
-**15. Update book status on return**
+15. **Update book status on return**
 
 ```sql
 /* 
@@ -512,7 +512,7 @@ BEGIN
 END;
 ```
 
-**16. Branch performance report**
+16. **Branch performance report**
 
 ```sql
 /* 
@@ -538,7 +538,7 @@ LEFT JOIN dbo.return_status AS ret
 GROUP BY br.branch_id;
 ```
 
-**17. Find employees with the most book issues processed**
+17. **Find employees with the most book issues processed**
 
 ```sql
 /* 
@@ -565,7 +565,7 @@ GROUP BY
 ORDER BY tot_books_issued DESC;
 ```
 
-**18. Identify members issuing high-risk books**
+18. **Identify members issuing high-risk books**
 
 ```sql
 /* 
@@ -593,7 +593,7 @@ GROUP BY
 HAVING COUNT(iss.issued_book_isbn) > 2;
 ```
 
-**19. Stored procedure – Manage book status on issuance**
+19. **Stored procedure – Manage book status on issuance**
 
 ```sql
 /* 
@@ -629,7 +629,7 @@ BEGIN
     END
 ```
 
-**20. CTAS – Identify overdue books and calculate fines**
+20. **CTAS – Identify overdue books and calculate fines**
 
 ```sql
 /* 
@@ -668,8 +668,11 @@ GROUP BY sq.member_id;
 ## Conclusion 
 
 - **Database schema:** Detailed table structures and foreign keys are defined in the DDL above.
+  
 - **Data analysis:** The queries provide insights into book categories, member activity, employee performance and branch-level metrics.
+  
 - **Summary reports:** CTAS outputs (books_issued, branch_reports, active_members, overdue_fines) support operational decision making and reporting.
+
 
 
 
