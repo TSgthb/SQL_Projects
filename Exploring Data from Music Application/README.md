@@ -93,7 +93,7 @@ GO
 
 The queries in this section, helps us understand the structure and distribution of the dataset. These are:
 
-**Task 1: Count Total Records**
+1. **Count Total Records**
 
 ```sql
 -- ============================================================
@@ -104,7 +104,7 @@ FROM dbo.music_info;
 GO
 ```
 
-**Task 2: Count Unique Artists**
+2. **Count Unique Artists**
 
 ```sql
 -- ============================================================
@@ -115,7 +115,7 @@ FROM dbo.music_info;
 GO
 ```
 
-**Task 3: Count Unique Albums**
+3. **Count Unique Albums**
 
 ```sql
 -- ============================================================
@@ -126,7 +126,7 @@ FROM dbo.music_info;
 GO
 ```
 
-**Task 4: Count Unique Album Types**
+4. **Count Unique Album Types**
 
 ```sql
 -- ============================================================
@@ -137,7 +137,7 @@ FROM dbo.music_info;
 GO
 ```
 
-**Task 5: Song Duration Extremes**
+5. **Song Duration Extremes**
 
 ```sql
 -- ============================================================
@@ -150,7 +150,7 @@ FROM dbo.music_info;
 GO
 ```
 
-**Task 6: List Unique Channels**
+6. **List Unique Channels**
 
 ```sql
 -- ============================================================
@@ -161,7 +161,7 @@ FROM dbo.music_info;
 GO
 ```
 
-**Task 7: List Unique Platforms**
+7. **List Unique Platforms**
 
 ```sql
 -- ============================================================
@@ -172,7 +172,7 @@ FROM dbo.music_info;
 GO
 ```
 
-**Task 8: Preview Top Records from View**
+8. **Preview Top Records from View**
 
 ```sql
 -- ============================================================
@@ -183,7 +183,7 @@ FROM dbo.view_music_info;
 GO
 ```
 
-**Task 9: Tracks with More Than 1 Billion Streams**
+9. **Tracks with More Than 1 Billion Streams**
 
 ```sql
 -- ============================================================
@@ -195,7 +195,7 @@ WHERE no_of_streams > 1000000000;
 GO
 ```
 
-**Task 10: List All Albums with Their Respective Artists**
+10. **List All Albums with Their Respective Artists**
 
 ```sql
 -- ============================================================
@@ -208,7 +208,7 @@ FROM dbo.view_music_info;
 GO
 ```
 
-**Task 11: Total Comments for Licensed Tracks**
+11. **Total Comments for Licensed Tracks**
 
 ```sql
 -- ============================================================
@@ -220,7 +220,7 @@ WHERE LOWER(licensed_status) = 'true';
 GO
 ```
 
-**Task 12: Tracks That Belong to Album Type 'Single'**
+12. **Tracks That Belong to Album Type 'Single'**
 
 ```sql
 -- ============================================================
@@ -235,7 +235,7 @@ ORDER BY track;
 GO
 ```
 
-**Task 13: Count of Total Tracks by Each Artist**
+13. **Count of Total Tracks by Each Artist**
 
 ```sql
 -- ============================================================
@@ -250,7 +250,7 @@ ORDER BY total_records DESC;
 GO
 ```
 
-**Task 14: Average Danceability per Album**
+14. **Average Danceability per Album**
 
 ```sql
 -- ============================================================
@@ -265,7 +265,7 @@ ORDER BY avg_danc DESC;
 GO
 ```
 
-**Task 15: Top 5 Tracks with Highest Energy**
+15. **Top 5 Tracks with Highest Energy**
 
 ```sql
 -- ============================================================
@@ -280,7 +280,7 @@ ORDER BY max_energy DESC;
 GO
 ```
 
-**Task 16: Views and Likes for Tracks with Official Videos**
+16. **Views and Likes for Tracks with Official Videos**
 
 ```sql
 -- ============================================================
@@ -299,7 +299,7 @@ ORDER BY total_views DESC, total_likes DESC;
 GO
 ```
 
-**Task 17: Total Views per Album**
+17. **Total Views per Album**
 
 ```sql
 -- ============================================================
@@ -315,7 +315,7 @@ ORDER BY total_views DESC;
 GO
 ```
 
-**Task 18: Tracks Most Played on Spotify**
+18. **Tracks Most Played on Spotify**
 
 ```sql
 -- ============================================================
@@ -333,7 +333,7 @@ GO
 
 The queries in this section, help extract insights using advanced SQL concepts such as CTEs, subqueries and window functions:
 
-**Task 19: Top 3 Most-Viewed Tracks per Artist**
+19. **Top 3 Most-Viewed Tracks per Artist**
 
 ```sql
 -- ============================================================
@@ -354,7 +354,7 @@ ORDER BY fsq.clean_artist, fsq.ranking_status;
 GO
 ```
 
-**Task 20: Tracks with Liveness Above Average**
+20. **Tracks with Liveness Above Average**
 
 ```sql
 -- ============================================================
@@ -374,7 +374,7 @@ ORDER BY liveness DESC;
 GO
 ```
 
-**Task 21: Energy Difference per Album**
+21. **Energy Difference per Album**
 
 ```sql
 -- ============================================================
@@ -399,7 +399,7 @@ ORDER BY energy_difference;
 GO
 ```
 
-**Task 22: Tracks with Energy-to-Liveness Ratio > 1.2**
+22. **Tracks with Energy-to-Liveness Ratio > 1.2**
 
 ```sql
 -- ============================================================
@@ -416,7 +416,7 @@ GROUP BY track, album, artist, energy_liveness;
 GO
 ```
 
-**Task 23: Cumulative Sum of Likes Ordered by Views**
+23. **Cumulative Sum of Likes Ordered by Views**
 
 ```sql
 -- ============================================================
@@ -460,7 +460,7 @@ ON dbo.music_info (track, album, artist)
 INCLUDE (likes, views, comments, official_video, licensed, stream);
 ```
 
-Below are the before and after index implementation query execution statistics for **Task 23** as an example:
+Below are the before and after index implementation query execution statistics for 23** as an example:
 
 - Before index implementation:
 
@@ -473,12 +473,19 @@ Below are the before and after index implementation query execution statistics f
 ## Findings and Conclusions
 
 - **Data Integrity**: Initial cleaning revealed several records with invalid or missing song durations. Removing these ensured more reliable analysis across duration-based metrics.
+  
 - **Content Distribution**: The dataset includes a diverse range of artists, albums, and track types. Singles dominate in volume, while albums show richer audio feature variation.
+  
 - **Engagement Insights**: Tracks with official videos consistently show higher views and likes, confirming the impact of visual content on listener engagement.
+  
 - **Platform Trends**: Spotify emerged as the most frequent platform for track playback, highlighting its dominance in music streaming.
+  
 - **Audio Feature Patterns**: Danceability and energy vary significantly across albums. High-energy tracks tend to correlate with higher stream counts, especially in top-performing artists.
+  
 - **Advanced Metrics**: Window functions revealed the top 3 most-viewed tracks per artist, while cumulative likes analysis helped identify momentum-building tracks.
+  
 - **Performance Optimization**: Materializing the view and implementing targeted indexes (e.g., on track, album, views) significantly reduced query execution time, especially for rolling aggregations.
+
 
 
 
