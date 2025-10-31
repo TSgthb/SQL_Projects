@@ -1,6 +1,6 @@
 /*
 ====================================================================================
-Script for Creating the Database and Table for Inventory Data Management and Analytics
+Script for Creating the Database and Table for Inventory Data Management and Analysis
 ====================================================================================
 1. This script sets up the `invent_db` database and prepares the `inventory` table.
 2. It adds a primary key, standardizes column types, and prepares the table for analysis.
