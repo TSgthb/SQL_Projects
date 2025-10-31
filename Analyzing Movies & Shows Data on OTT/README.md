@@ -6,7 +6,7 @@ This project demonstrates the implementation of a data analysis pipeline for Net
 
 ## Project Objectives
 
-1. **Set up a database and populate it with the provided data by importing it from a tab-delimited source.**
+1. **Set up a database and populate it with the provided data by importing it from a tab-delimited file.**
 2. **Perform basic exploratory data analysis to understand dataset shape and distributions.**
 3. **Use advanced SQL concepts such as CTEs, window functions and subqueries to answer complex business questions and derive actionable insights.**
 
@@ -453,6 +453,7 @@ GO
 - **Duration Patterns:** Most movies fall within the 90–120 minute range, while TV shows vary widely in season count. A subset of long-running shows (5+ seasons) indicates strong viewer loyalty.
 
 - **Content Classification:** Using keyword-based sentiment tagging (e.g., presence of “kill” or “violence”), content was categorized into *Good*, *Bad*, or *Uncertain*. This can aid in content moderation or parental control features.
+
 
 
 
