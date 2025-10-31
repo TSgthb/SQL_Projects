@@ -332,7 +332,7 @@ GO
   
 - **Stock Distribution:** A majority of products are in stock, but a notable subset of high-MRP items are out of stock.
   
-- **Discount Strategy:** Consuble categories such as Fruits & Vegetables and Meats, Fish & Eggs, offer significantly higher discounts, while premium products from Home & Cleaning, Personal Care and Health & Hygiene, have minimal discounts.
+- **Discount Strategy:** Consumable categories such as Fruits & Vegetables and Meats, Fish & Eggs, offer significantly higher discounts, while premium products from Home & Cleaning, Personal Care and Health & Hygiene, have minimal discounts.
   
 - **Revenue Potential:** Revenue is concentrated in a few high-volume categories, suggesting optimization opportunities.
 
