@@ -123,3 +123,102 @@ GO
 ALTER TABLE dbo.inventory
 ALTER COLUMN discountedSellingPrice DECIMAL(8,2) NULL;
 GO
+
+-- Top 10 best-value products in terms of discount percentage
+
+SELECT DISTINCT TOP (10)
+	name,
+	mrp,
+	weightInGms,
+	discountPercent
+FROM
+	dbo.inventory
+ORDER BY
+	discountPercent DESC
+	
+-- Expensive products that are out of stock
+
+SELECT 
+	name,
+	mrp
+FROM
+	dbo.inventory
+WHERE
+	mrp > 300.00
+	AND
+	outOfStock = 1
+	
+-- Estimated revenue for each cateory
+
+SELECT
+	cateory,
+	SUM(discountedSellingPrice * availableQuantity) AS total_revenue
+FROM
+	dbo.inventory
+GROUP BY
+	cateory
+	
+-- Products having price more than 500 Rs and discount is less than 10%
+
+SELECT
+	name,
+	mrp,
+	discountPercent
+FROM
+	dbo.inventory
+WHERE
+	mrp > 500.00
+	AND
+	discount < 10
+ORDER BY
+	mrp DESC,
+	discount ASC
+	
+-- Top 5 categories with highest average discount percentage
+
+SELECT TOP (5)
+	cateory,
+	AVG(discountPercent) AS avg_discount_perc
+FROM 
+	dbo.inventory
+GROUP BY
+	cateory
+ORDER BY
+	avg_discount_perc DESC
+	
+-- Best value products over 100g based on per gram price
+
+SELECT DISTINCT
+	name,
+	discountedSellingPrice,
+	weightInGms,
+	ROUND(discountedSellingPrice / weightInGms, 2) AS discounted_sp_per_gram
+FROM
+	dbo.inventory
+WHERE
+	weightInGms > 100
+ORDER BY discounted_sp_per_gram DESC
+
+-- Group products in weight classes - light and heavy based on weight
+
+SELECT
+	*,
+	CASE 
+		WHEN weightInGms > 1000 THEN 'Heavy'
+		ELSE 'Light'
+	END AS weight_type
+FROM 
+	dbo.inventory
+ORDER BY
+	weight_type DESC
+	
+-- Total inventory weigth per category
+
+SELECT
+	category,
+	ROUND(SUM((weightInGms * availableQuantity)/1000), 2) AS tot_inventory_weight(kg)
+FROM
+	dbo.inventory
+GROUP BY
+	category
+	
