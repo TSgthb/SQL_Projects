@@ -1,4 +1,4 @@
-# Inventory Data Analysis for Online Grocery Store
+# Inventory Data Management & Analysis for Online Grocery Store
 
 <p align="justify">
 This project demonstrates the implementation of a simple data analysis pipeline for Zepto, an online grocery delivery store using SQL Server. It focuses on cleaning, transforming, and analyzing inventory data to extract actionable insights related to stock status, pricing, discount strategies, and category-level performance.
