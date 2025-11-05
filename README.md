@@ -1,6 +1,5 @@
-![DBMS](https://img.shields.io/badge/DBMS-Microsoft%20SQL%20Server-D10000?style=for-the-badge)
-![Language](https://img.shields.io/badge/Language-T--SQL-0090FF?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/TSgthb/SQL_Projects?style=for-the-badge&label=Last%20Updated&color=E6AD00)
+![DBMS](https://img.shields.io/badge/RDBMS-Microsoft%20SQL%20Server-D10000?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/TSgthb/SQL_Projects?style=for-the-badge&label=Last%20Updated&color=339933)
 
 ## Repository Overview
 
@@ -35,4 +34,6 @@ The projects span a wide range of concepts, ranging from:
     - [*Analyzing Movies & Shows Data on OTT*](https://github.com/TSgthb/SQL_Projects/tree/main/Analyzing%20Movies%20%26%20Shows%20Data%20on%20OTT)
     - [*Eploring Data from Music Application*](https://github.com/TSgthb/SQL_Projects/tree/main/Exploring%20Data%20from%20Music%20Application)
     - [*Exploring Coffee Shop Sales Data*](https://github.com/TSgthb/SQL_Projects/tree/main/Exploring%20Coffee%20Shop%20Sales%20Data)
+    - [*Inventory Data Management & Analysis*](https://github.com/TSgthb/SQL_Projects/tree/main/Inventory%20Data%20Management%20%26%20Analysis)
+    - [*Global Impact Analysis of COVID-19*](https://github.com/TSgthb/SQL_Projects/tree/main/Global%20Impact%20Analysis%20of%20COVID-19)
       
