@@ -2,7 +2,7 @@
 
 <p align="justify"> This project demonstrates a comprehensive SQL-based exploratory analysis of global COVID-19 data using SQL Server. It leverages the dataset to extract insights on infection rates, mortality, vaccination coverage, and temporal trends across countries and continents and provide oppurtunities to transform raw epidemiological data into structured insights that support public health decision-making, policy evaluation, and global comparisons. </p> 
 
-Jump to end for [Findings and Conclusions](https://github.com/TSgthb/SQL_Projects/tree/main/Global%20Impact%20Analysis%20of%20COVID-19#findings-and-conclusion).
+Jump to end for [Findings & Conclusions](https://github.com/TSgthb/SQL_Projects/tree/main/Global%20Impact%20Analysis%20of%20COVID-19#findings-and-conclusion).
 
 ## Project Objectives
 
@@ -257,4 +257,5 @@ GO
   
 - **Temporal Patterns:** The pandemic exhibited clear wave patterns, with spikes in cases and deaths aligning with global surges. Year-over-year analysis highlighted the impact of variants and public health interventions.
 - **Continental Disparities:** Africa and Asia showed lower reported case and death percentages, possibly due to underreporting or demographic advantages. Ocenia, Europe, Americas had higher mortality ratios.
+
 
