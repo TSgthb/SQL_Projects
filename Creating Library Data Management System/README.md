@@ -4,12 +4,14 @@
 This project demonstrates the implementation of a library management system using SQL Server. It includes creating the database and schema, loading data from CSV sources, performing CRUD operations, creating summary tables using CTAS patterns, and developing advanced queries and stored procedures for operational reporting and data maintenance.
 </p>
 
+Jump to end for [Findings & Conclusions](https://github.com/TSgthb/SQL_Projects/tree/main/Creating%20Library%20Data%20Management%20System#conclusion).
+
 ## Project Objectives
 
-1. **Set up the library management system database and create tables for branches, employees, members, books, issue tracking and return tracking.**
-2. **Load data efficiently into tables using bulk import utilities and supplement with manual inserts where necessary.**
-3. **Perform CRUD operations and create summary tables using CTAS (create table as select).**
-4. **Implement advanced SQL queries and stored procedures to support reporting, overdue detection and automated status updates.**
+1. Set up the library management system database and create tables for branches, employees, members, books, issue tracking and return tracking.
+2. Load data efficiently into tables using bulk import utilities and supplement with manual inserts where necessary.
+3. Perform CRUD operations and create summary tables using CTAS (create table as select).
+4. Implement advanced SQL queries and stored procedures to support reporting, overdue detection and automated status updates.
 
 ## Project Structure
 
@@ -672,6 +674,7 @@ GROUP BY sq.member_id;
 - **Data analysis:** The queries provide insights into book categories, member activity, employee performance and branch-level metrics.
   
 - **Summary reports:** CTAS outputs (books_issued, branch_reports, active_members, overdue_fines) support operational decision making and reporting.
+
 
 
 
