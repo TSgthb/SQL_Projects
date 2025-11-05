@@ -4,7 +4,7 @@
 This project involves analyzing a Spotify dataset with various attributes about tracks, albums and artists using SQL and answer business questions related to artist performance, track popularity, streaming trends, audio features, and platform engagement. The tasks explored includes setting up a database, importing, cleaning and standardizing data within it, performing exploratory and advance data analysis, and optimizing queries for optimal performance.
 </p>
 
-Jump to end for [Findings and Conclusions](https://github.com/TSgthb/SQL_Projects/blob/main/Exploring%20Data%20from%20Music%20Application/README.md#findings-and-conclusions).
+Jump to end for [Findings & Conclusions](https://github.com/TSgthb/SQL_Projects/blob/main/Exploring%20Data%20from%20Music%20Application/README.md#findings-and-conclusions).
 
 ## Project Objectives
 
@@ -487,6 +487,7 @@ Below are the before and after index implementation query execution statistics f
 - **Advanced Metrics**: Window functions revealed the top 3 most-viewed tracks per artist, while cumulative likes analysis helped identify momentum-building tracks.
   
 - **Performance Optimization**: Materializing the view and implementing targeted indexes (e.g., on track, album, views) significantly reduced query execution time, especially for rolling aggregations.
+
 
 
 
