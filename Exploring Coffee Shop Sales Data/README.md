@@ -4,12 +4,14 @@
 This project analyzes sales data from a fictional online coffee brand, Monday Coffee, operating since January 2023. With plans to expand into physical retail across India, the goal is to identify the top three cities for store launch based on consumer demand, sales performance, and demographic indicators. It involves database design, data ingestion from CSV sources, CRUD operations, and advanced T-SQL queries for reporting and decision support.
 </p>
 
+Jump to end for [Findings & Conclusions](https://github.com/TSgthb/SQL_Projects/tree/main/Exploring%20Coffee%20Shop%20Sales%20Data#4-conclusion-and-recommendations).
+
 ## Project Objectives
 
-1. **Set up a database and required tables.**
-2. **Import the data in tables using external CSV files**
-3. **Use SQL queries to answer business questions and derive actionable insights.**
-4. **Provide recommendations for potential business expansion.**
+1. Set up a database and required tables.
+2. Import the data in tables using external CSV files
+3. Use SQL queries to answer business questions and derive actionable insights.
+4. Provide recommendations for potential business expansion.
 
 ## Project Structure
 
@@ -383,6 +385,7 @@ Based on the data from above queries and evaluating profitability, customer pene
 2. **Pune:** Leading in profitability with 98.78% savings and rent-to-revenue ratio, 1.22%, Pune too stands out as a high margin and low cost market with good customer penetration. This makes it ideal for strategic growth options.
 
 3. **Chennai:** This has a strong revenue and savings performance, with at around 15.16% market capture. It seems like a promising candidate for expansion if customer acquisition strategies are prioritized.
+
 
 
 
