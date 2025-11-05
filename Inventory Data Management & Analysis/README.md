@@ -2,7 +2,7 @@
 
 <p align="justify"> This project demonstrates the implementation of a simple data analysis pipeline for Zepto, an online grocery delivery store using SQL Server. It focuses on cleaning, transforming, and analyzing inventory data to extract actionable insights related to stock status, pricing, discount strategies, and category-level performance. </p>
 
-Jump to end for [Findings and Conclusions](https://github.com/TSgthb/SQL_Projects/tree/main/Inventory%20Data%20Management%20%26%20Analysis#findings-and-conclusion).
+Jump to end for [Findings & Conclusions](https://github.com/TSgthb/SQL_Projects/tree/main/Inventory%20Data%20Management%20%26%20Analysis#findings-and-conclusion).
 
 ## Project Objectives
 
