@@ -8,10 +8,10 @@ Jump to end for [Findings & Conclusions](https://github.com/TSgthb/SQL_Projects/
 
 ## Project Objectives
 
-1. **Set up a retail sales database and populate it with the provided sales data.**
-2. **Identify and remove records with missing or null values.**
-3. **Perform basic exploratory data analysis to understand dataset shape and distributions.**
-4. **Use SQL queries to answer business questions and derive actionable insights.**
+1. Set up a retail sales database and populate it with the provided sales data.
+2. Identify and remove records with missing or null values.
+3. Perform basic exploratory data analysis to understand dataset shape and distributions.
+4. Use SQL queries to answer business questions and derive actionable insights.
 
 ## Project Structure
 
