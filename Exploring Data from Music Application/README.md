@@ -8,11 +8,11 @@ Jump to end for [Findings and Conclusions](https://github.com/TSgthb/SQL_Project
 
 ## Project Objectives
 
-1. **Set up a database and populate it with the provided music application data.**
-2. **Identify and remove records with missing or null values.**
-3. **Perform basic exploratory data analysis to understand dataset shape and distributions.**
-4. **Use SQL queries to answer business questions and derive actionable insights.**
-5. **Optimize performance of analytical queries using indexes.**
+1. Set up a database and populate it with the provided music application data.
+2. Identify and remove records with missing or null values.
+3. Perform basic exploratory data analysis to understand dataset shape and distributions.
+4. Use SQL queries to answer business questions and derive actionable insights.
+5. Optimize performance of analytical queries using indexes.
 
 ## Project Structure
 
@@ -487,6 +487,7 @@ Below are the before and after index implementation query execution statistics f
 - **Advanced Metrics**: Window functions revealed the top 3 most-viewed tracks per artist, while cumulative likes analysis helped identify momentum-building tracks.
   
 - **Performance Optimization**: Materializing the view and implementing targeted indexes (e.g., on track, album, views) significantly reduced query execution time, especially for rolling aggregations.
+
 
 
 
