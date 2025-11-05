@@ -2,6 +2,8 @@
 
 This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. It highlights industry best practices in data engineering and analytics.
 
+Jump to end for [Findings & Conclusions](asasasa).
+
 ## Project Overview
 
 This project involves:
