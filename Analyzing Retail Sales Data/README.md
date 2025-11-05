@@ -4,6 +4,8 @@
 The project involves setting up a retail sales database, cleaning and standardizing data within it, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries using SQL Server.
 </p>
 
+Jump to end for [Findings & Conclusions](https://github.com/TSgthb/SQL_Projects/tree/main/Analyzing%20Retail%20Sales%20Data#findings).
+
 ## Project Objectives
 
 1. **Set up a retail sales database and populate it with the provided sales data.**
