@@ -1,7 +1,7 @@
 # SQL Projects Repository
 
 <p align="left">
-  <img src="https://img.shields.io/badge/RDBMS-Microsoft%20SQL%20Server-D10000?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-D10000?style=for-the-badge" />
   <img src="https://img.shields.io/github/last-commit/TSgthb/SQL_Projects?style=for-the-badge&label=Last%20Updated&color=339933" />
 </p>
 
