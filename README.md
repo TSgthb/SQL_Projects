@@ -1,5 +1,9 @@
-![DBMS](https://img.shields.io/badge/RDBMS-Microsoft%20SQL%20Server-D10000?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/TSgthb/SQL_Projects?style=for-the-badge&label=Last%20Updated&color=339933)
+# SQL Projects Repository
+
+<p align="left">
+  <img src="https://img.shields.io/badge/RDBMS-Microsoft%20SQL%20Server-D10000?style=for-the-badge" />
+  <img src="https://img.shields.io/github/last-commit/TSgthb/SQL_Projects?style=for-the-badge&label=Last%20Updated&color=339933" />
+</p>
 
 ## Repository Overview
 
@@ -16,7 +20,7 @@ Each project is designed to simulate real-world scenarios and includes the follo
 - __Data Transformation & Analysis__: This includes the creation of derived columns, calculated metrics and aggregations to reshape and enrich the data, support analysis and derive insights to solve business problems.
 
 <p align="justify">
-The projects span a wide range of concepts, ranging from: 
+The projects span a wide range of concepts, from data warehousing to EDA, covering: 
 </p>
 
 - __Foundational Techniques__: Includes basic data exploration, string operations, conditional logic and date manipulations.
