@@ -36,7 +36,7 @@ The projects span a wide range of concepts, from data warehousing to EDA, coveri
     - [*Analyzing Retail Sales Data*](https://github.com/TSgthb/SQL_Projects/tree/main/Analyzing%20Retail%20Sales%20Data)
     - [*Creating Library Data Management System*](https://github.com/TSgthb/SQL_Projects/tree/main/Creating%20Library%20Data%20Management%20System)
     - [*Analyzing Movies & Shows Data on OTT*](https://github.com/TSgthb/SQL_Projects/tree/main/Analyzing%20Movies%20%26%20Shows%20Data%20on%20OTT)
-    - [*Eploring Data from Music Application*](https://github.com/TSgthb/SQL_Projects/tree/main/Exploring%20Data%20from%20Music%20Application)
+    - [*Exploring Data from Music Application*](https://github.com/TSgthb/SQL_Projects/tree/main/Exploring%20Data%20from%20Music%20Application)
     - [*Exploring Coffee Shop Sales Data*](https://github.com/TSgthb/SQL_Projects/tree/main/Exploring%20Coffee%20Shop%20Sales%20Data)
     - [*Inventory Data Management & Analysis*](https://github.com/TSgthb/SQL_Projects/tree/main/Inventory%20Data%20Management%20%26%20Analysis)
     - [*Global Impact Analysis of COVID-19*](https://github.com/TSgthb/SQL_Projects/tree/main/Global%20Impact%20Analysis%20of%20COVID-19)
