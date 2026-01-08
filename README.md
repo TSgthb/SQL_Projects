@@ -5,8 +5,6 @@
   <img src="https://img.shields.io/github/last-commit/TSgthb/SQL_Projects?style=for-the-badge&label=Last%20Updated&color=339933" />
 </p>
 
-## Repository Overview
-
 <p align="justify">
 This repository contains a collection of projects that demonstrates the end-to-end workflow of a data analytics pipeline, showcasing practical implementations of data engineering and analytical concepts using SQL. 
 
