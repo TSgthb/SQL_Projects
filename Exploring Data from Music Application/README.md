@@ -462,7 +462,7 @@ ON dbo.music_info (track, album, artist)
 INCLUDE (likes, views, comments, official_video, licensed, stream);
 ```
 
-Below are the before and after index implementation query execution statistics for 23** as an example:
+Below are the before and after index implementation query execution statistics for **question 23** as an example:
 
 - Before index implementation:
 
@@ -487,6 +487,7 @@ Below are the before and after index implementation query execution statistics f
 - **Advanced Metrics**: Window functions revealed the top 3 most-viewed tracks per artist, while cumulative likes analysis helped identify momentum-building tracks.
   
 - **Performance Optimization**: Materializing the view and implementing targeted indexes (e.g., on track, album, views) significantly reduced query execution time, especially for rolling aggregations.
+
 
 
 
