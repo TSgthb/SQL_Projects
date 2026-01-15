@@ -13,7 +13,8 @@ This project involves:
 
 ## Data Architecture
 
-![AD](https://github.com/TSgthb/SQL_Data_Warehouse_Project/blob/main/documents/data_warehouse/architecture_diagram.png)
+![AD](https://github.com/TSgthb/SQL_Projects/blob/main/Data%20Warehousing%20%26%20Analysis%20Using%20SQL%20Server/documents/data_warehouse/architecture_diagram.png)
+
 
 The data architecture for this project follows Medallion Architecture. There are 3 different layers - **Bronze**, **Silver**, and **Gold**.
 
